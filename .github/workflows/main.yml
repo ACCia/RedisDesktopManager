@@ -41,7 +41,7 @@ jobs:
       - uses: dev-drprasad/delete-tag-and-release@v0.1.2
         with:
           delete_release: true # default: false
-          tag_name: ${{ env.RDM_REF }}-nightly # tag name to delete
+          tag_name: ${{ env.RDM_REF }}-anyang # tag name to delete
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -51,10 +51,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: ${{ env.RDM_REF }}-nightly
-          release_name: v${{ env.RDM_REF }}-nightly
+          tag_name: ${{ env.RDM_REF }}-anyang
+          release_name: v${{ env.RDM_REF }}-anyang
           body: |
-            ${{ env.RDM_REF }}-nightly
+            ${{ env.RDM_REF }}-anyang
           draft: false
           prerelease: true
 
