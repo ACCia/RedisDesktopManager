@@ -17,7 +17,7 @@ Open source cross-platform Desktop Manager for Redis &reg; based on Qt 5
 
 ![RDM screenshot](http://rdm.dev/static/img/features/all.png?v2020)
 
-cc
+ccdddddddddd
 **Officially Supported platforms**:
 <a target="_blank" href='//www.microsoft.com/store/apps/9NDK76ZVZ3TM?cid=storebadge&ocid=badge'>
 <img height="50" src='https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png' alt='Get it from Microsoft'/>
