@@ -1,6 +1,3 @@
-# http://docs.redisdesktop.com/en/latest/install/
-# https://github.com/actions/virtual-environments/blob/master/images/win/Windows2019-Readme.md
-# https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions
 
 # This is a basic workflow to help you get started with Actions
 name: CI for redis desktop manager
@@ -186,8 +183,8 @@ jobs:
       with:
         # upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
         upload_url: ${{ needs.create_release.outputs.upload_url }}
-        asset_path: rdm/build/windows/installer/rdm-${{ env.VERSION }}.exe
-        asset_name: rdm-${{ env.VERSION }}.exe
+        asset_path: rdm/build/windows/installer/anyang-rdm-${{ env.VERSION }}.exe
+        asset_name: anyang-rdm-${{ env.VERSION }}.exe
         asset_content_type: application/vnd.microsoft.portable-executable
 
   build_on_osx:
@@ -228,13 +225,6 @@ jobs:
         brew install python@3.7
         brew link --overwrite python@3.7
     
-    # 使用私有库,egg-links时-t不能同时使用，--user解决权限问题
-    # https://github.com/UnitedIncome/serverless-python-requirements/issues/240
-    # https://github.com/pypa/pip/issues/4390
-    # https://github.com/pypa/pip/issues/4139
-    # https://github.com/pypa/pip/issues/562
-    # sudo pip3 install --prefix . -r $GITHUB_WORKSPACE/rdm/src/py/requirements.txt
-    # sudo pip3 install -t . -r $GITHUB_WORKSPACE/rdm/src/py/requirements.txt
     - name: pip install
       run: |
         cd rdm
@@ -253,13 +243,6 @@ jobs:
         cd rdm/src
         lupdate rdm.pro
         lrelease -verbose rdm.pro
-    # brew install tree && tree -a
-    # 去掉initUpdater不然报Please download new version of Redis Desktop Manager，不能使用
-    # sed -i '.back' 's/initUpdater();/\/\/initUpdater();/g' ./app/app.cpp
-    # macdeployqt
-    # https://doc.qt.io/qt-5/macos-deployment.html
-    # Qt Translations are not being copied
-    # https://github.com/probonopd/linuxdeployqt/issues/115
     - name: build
       id: build
       run: |
@@ -287,6 +270,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ needs.create_release.outputs.upload_url }}
-        asset_path: rdm/bin/osx/release/RDM.dmg
-        asset_name: RDM.dmg
+        asset_path: rdm/bin/osx/release/anyang-RDM.dmg
+        asset_name: anyang-RDM.dmg
         asset_content_type: application/dmg
