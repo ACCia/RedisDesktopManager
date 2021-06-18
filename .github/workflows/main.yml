@@ -15,8 +15,8 @@ on:
     paths-ignore: 
       - 'README.md'
       - 'LICENSE'
-  schedule:
-    - cron: '0 22 * * *' # Runs at 22:00 UTC every day
+#  schedule:
+#    - cron: '0 22 * * *' # Runs at 22:00 UTC every day
 
 env:
   RDM_REF: 2021
