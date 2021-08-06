@@ -225,7 +225,7 @@ jobs:
     
     - name: setup python
       run: |
-        brew uninstall python3
+        brew uninstall --ignore-dependencies python3
         brew install python@3.9
         brew link --overwrite python3
         mkdir -p /usr/local/opt/python@3.9/lib/Python.framework/Versions/3.9/
