@@ -240,6 +240,8 @@ jobs:
       run: |
         cd rdm
         mkdir -p bin/osx/release && cd bin/osx/release
+        mkdir -p ./3rdparty/python-3
+        cp -Rf /System/Library/Frameworks/Python.framework/Versions/3.9 $GITHUB_WORKSPACE/rdm/3rdparty/python-3
         cp -Rf $GITHUB_WORKSPACE/rdm/src/py .
         cd py
         echo six >> requirements.txt
