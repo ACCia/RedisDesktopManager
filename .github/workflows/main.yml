@@ -223,9 +223,9 @@ jobs:
         cd rdm
         cd ./src && cp ./resources/Info.plist.sample ./resources/Info.plist
     
-#     - name: setup python
-#       run: |
-#         brew unlink python@3.9
+    - name: setup python
+      run: |
+        brew install python@3.9
 #         brew install python@3.7
 #         brew link --overwrite python@3.7
     
@@ -241,7 +241,7 @@ jobs:
         cd rdm
         mkdir -p bin/osx/release && cd bin/osx/release
         mkdir -p ./3rdparty/python-3
-        cp -Rf /System/Library/Frameworks/Python.framework/Versions/3.9 $GITHUB_WORKSPACE/rdm/3rdparty/python-3
+        cp -Rf /usr/local/Cellar/python@3.9/3.9.6/Frameworks/Python.framework/Versions/3.9 $GITHUB_WORKSPACE/rdm/3rdparty/python-3
         cp -Rf $GITHUB_WORKSPACE/rdm/src/py .
         cd py
         echo six >> requirements.txt
