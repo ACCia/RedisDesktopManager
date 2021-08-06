@@ -5,7 +5,6 @@
 #include <functional>
 
 #include "app/models/connectionconf.h"
-#include "connections-tree/items/servergroup.h"
 #include "bulk-operations/connections.h"
 #include "connections-tree/model.h"
 #include "treeoperations.h"
@@ -13,6 +12,10 @@
 
 namespace ValueEditor {
 class TabsModel;
+}
+
+namespace ConnectionsTree {
+class ServerGroup;
 }
 
 class Events;
@@ -49,6 +52,10 @@ class ConnectionsManager : public ConnectionsTree::Model,
   Q_INVOKABLE bool testConnectionSettings(const ServerConfig& config);
 
   Q_INVOKABLE ServerConfig createEmptyConfig() const;
+
+  Q_INVOKABLE ServerConfig parseConfigFromRedisConnectionString(const QString&) const;
+
+  Q_INVOKABLE bool isRedisConnectionStringValid(const QString&);
 
   void saveConfig();
 

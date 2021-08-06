@@ -26,6 +26,8 @@ ApplicationWindow {
     minimumWidth: 1100
     minimumHeight: 700
 
+    property bool darkModeEnabled: sysPalette.base.hslLightness < 0.4
+
     property double wRatio : (width * 1.0) / (Screen.width * 1.0)
     property double hRatio : (height * 1.0) / (Screen.height * 1.0)
 
@@ -68,6 +70,11 @@ ApplicationWindow {
         property string valueEditorFont
         property string valueEditorFontSize
         property int valueSizeLimit: 150000
+    }
+
+    Settings {
+        id: defaultFormatterSettings
+        category: "formatter_overrides"
     }
 
     SystemPalette {
@@ -130,22 +137,48 @@ ApplicationWindow {
         }
     }
 
-    OkDialog {
+    Loader {
         id: notification
-        objectName: "rdm_qml_error_dialog"
-        visible: false
+
+        property var icon
+        property string text
+        property string details
 
         function showError(msg, details="") {
             icon = StandardIcon.Warning
             text = msg
-            detailedText = details
-            open()
+            notification.details = details
+            sourceComponent = notificationTemplate
         }
 
         function showMsg(msg) {
             icon = StandardIcon.Information
             text = msg
-            open()
+            details = ""
+            sourceComponent = notificationTemplate
+        }
+
+        onLoaded: {
+            item.open()
+        }
+
+        Component {
+            id: notificationTemplate
+
+            OkDialog {
+                objectName: "rdm_qml_error_dialog"
+                visible: false
+
+                icon: notification.icon
+                text: notification.text
+                detailedText: notification.details
+
+                onVisibleChanged: {
+                    if (!visible) {
+                        notification.sourceComponent = undefined
+                    }
+                }
+            }
         }
     }
 

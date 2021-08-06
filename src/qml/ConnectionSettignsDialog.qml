@@ -92,11 +92,22 @@ Dialog {
         dialog_notification.showError(err)
     }
 
-    onVisibleChanged: {
-        if (visible)
-            connectionSettingsTabBar.currentIndex = 0
+    function isConnectionStringValid(connectionString) {
+        return connectionsManager.isRedisConnectionStringValid(connectionString)
     }
 
+    function parseConnectionString(connectionString) {
+        return connectionsManager.parseConfigFromRedisConnectionString(connectionString)
+    }
+
+    onVisibleChanged: {
+        if (visible) {
+            connectionSettingsTabBar.currentIndex = isNewConnection ? 0 : 1
+            if (isNewConnection) {
+                connectionStringField.forceActiveFocus()
+            }
+        }
+    }
 
     contentItem: Rectangle {
         color: sysPalette.base
@@ -115,7 +126,7 @@ Dialog {
 
             ColumnLayout {
                 anchors.fill: parent
-                anchors.margins: 5
+                anchors.margins: 10
 
                 TabBar {
                     id: connectionSettingsTabBar
@@ -126,6 +137,14 @@ Dialog {
                     palette.mid: sysPalette.window
                     palette.window: sysPalette.base
                     palette.windowText: sysPalette.windowText
+
+                    TabButton {
+                        id: connectionWizardTabBtn
+                        objectName: "rdm_connection_settings_dialog_wizard_tab"
+                        text:  qsTranslate("RDM","How to connect")
+                        visible: isNewConnection
+                        width: visible ? undefined : 0
+                    }
 
                     TabButton {
                         objectName: "rdm_connection_settings_dialog_basic_settings_tab"
@@ -143,6 +162,290 @@ Dialog {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     currentIndex: connectionSettingsTabBar.currentIndex
+
+                    BetterTab {
+                        id: wizardTab
+
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        Layout.margins: 30
+
+                        ColumnLayout {
+                            anchors.fill: parent
+                            anchors.margins: 5
+                            spacing: 20
+
+                            RowLayout {
+                                SettingsGroupTitle {
+                                    text: qsTranslate("RDM","Create connection from Redis URL")
+                                }
+                            }
+
+                            RowLayout {
+                                Layout.fillWidth: true
+
+                                BetterTextField {
+                                    id: connectionStringField
+                                    objectName: "rdm_connection_settings_dialog_wizard_connection_string_field"
+                                    Layout.fillWidth: true
+                                    focus: connectionWizardTabBtn.visible
+                                    placeholderText: "redis://localhost:6379"
+
+                                    KeyNavigation.tab: importConnectionStringBtn.enabled? importConnectionStringBtn : skipToNextTabBtn
+
+                                    onAccepted: {
+                                        importConnectionStringBtn.clicked()
+                                    }
+
+                                    onTextEdited: validationError = false
+                                }
+
+                                BetterButton {
+                                    id: importConnectionStringBtn
+                                    objectName: "rdm_connection_settings_dialog_wizard_import_btn"
+                                    text: qsTranslate("RDM","Import")
+                                    enabled: !!connectionStringField.text
+
+                                    KeyNavigation.tab: skipToNextTabBtn
+
+                                    onClicked: {
+                                        if (!isConnectionStringValid(connectionStringField.text)) {
+                                            connectionStringField.validationError = true
+                                        } else {
+                                            connectionStringField.validationError = false
+                                            root.settings = parseConnectionString(connectionStringField.text)
+                                            connectionSettingsTabBar.currentIndex = 1
+                                            connectionName.forceActiveFocus()
+                                        }
+                                    }
+
+                                    Keys.onEnterPressed: {
+                                        importConnectionStringBtn.clicked()
+                                    }
+
+                                    Keys.onReturnPressed: {
+                                        importConnectionStringBtn.clicked()
+                                    }
+                                }
+                            }
+
+                            RichTextWithLinks {
+                                text: qsTranslate("RDM", "Learn more about Redis URL:  ")
+                                      + "<a href='https://www.iana.org/assignments/uri-schemes/prov/redis'>redis://</a>,&nbsp;"
+                                      + "<a href='https://www.iana.org/assignments/uri-schemes/prov/rediss'>rediss://</a>"
+                            }
+
+                            RowLayout {
+
+                                SettingsGroupTitle {
+                                    text: qsTranslate("RDM","Connection guides")
+                                }
+                            }
+
+                            GridLayout {
+                                id: tileGrid
+                                columns: 4
+
+                                Layout.fillWidth: true
+
+                                property int tileSize: 90
+                                property int tileIconSize: 64
+
+                                ImageButton {
+                                    property string url: "http://docs.rdm.dev/en/latest/quick-start/#connect-to-a-local-or-public-redis-server"
+
+                                    tooltip: url
+
+                                    Layout.fillWidth: true
+                                    implicitHeight: tileGrid.tileSize
+
+                                    text: qsTranslate("RDM", "Local or Public Redis")
+
+                                    showBorder: true
+
+                                    iconSource: ""
+                                    onClicked: Qt.openUrlExternally(url)
+                                }
+
+                                ImageButton {
+                                    property string url: "http://docs.rdm.dev/en/latest/quick-start/#connect-to-a-public-redis-server-with-ssl"
+
+                                    tooltip: url
+
+                                    Layout.fillWidth: true
+                                    implicitHeight: tileGrid.tileSize
+
+                                    text: qsTranslate("RDM", "Redis with SSL/TLS")
+
+                                    showBorder: true
+
+                                    iconSource: ""
+                                    onClicked: Qt.openUrlExternally(url)
+                                }
+
+                                ImageButton {
+                                    property string url: "http://docs.rdm.dev/en/latest/quick-start/#connect-to-private-redis-server-via-ssh-tunnel"
+
+                                    tooltip: url
+
+                                    Layout.fillWidth: true
+                                    implicitHeight: tileGrid.tileSize
+
+                                    text: qsTranslate("RDM", "SSH tunnel")
+
+                                    showBorder: true
+
+                                    iconSource: ""
+                                    onClicked: Qt.openUrlExternally(url)
+                                }
+
+                                ImageButton {
+                                    property string url: "http://docs.rdm.dev/en/latest/quick-start/#connect-to-a-unix-socket"
+
+                                    tooltip: url
+
+                                    Layout.fillWidth: true
+                                    implicitHeight: tileGrid.tileSize
+
+                                    text: qsTranslate("RDM", "UNIX socket")
+
+                                    showBorder: true
+
+                                    iconSource: ""
+                                    onClicked: Qt.openUrlExternally(url)
+                                }
+
+                                ImageButton {
+                                    property string url: "http://docs.rdm.dev/en/latest/quick-start/#digital-ocean-managed-redis"
+
+                                    Layout.fillWidth: true
+                                    implicitHeight: tileGrid.tileSize
+
+                                    imgWidth: tileGrid.tileIconSize
+                                    imgHeight: tileGrid.tileIconSize
+
+                                    iconSource: "qrc:/images/digitalocean_logo.svg"
+
+                                    showBorder: true
+
+                                    tooltip: url
+
+                                    onClicked: Qt.openUrlExternally(url)
+                                }
+
+                                ImageButton {
+                                    property string url: "http://docs.rdm.dev/en/latest/quick-start/#microsoft-azure-redis-cache"
+
+                                    Layout.fillWidth: true
+                                    implicitHeight: tileGrid.tileSize
+
+                                    imgWidth: tileGrid.tileIconSize
+                                    imgHeight: tileGrid.tileIconSize
+
+                                    iconSource: "qrc:/images/azure_logo.svg"
+
+                                    showBorder: true
+
+                                    tooltip: url
+
+                                    onClicked: Qt.openUrlExternally(url)
+                                }
+
+                                ImageButton {
+                                    property string url: "http://docs.rdm.dev/en/latest/quick-start/#aws-elasticache"
+
+                                    Layout.fillWidth: true
+                                    implicitHeight: tileGrid.tileSize
+
+                                    imgWidth: tileGrid.tileIconSize
+                                    imgHeight: tileGrid.tileIconSize
+
+                                    iconSource: approot.darkModeEnabled? "qrc:/images/aws_logo_white.svg" : "qrc:/images/aws_logo.svg"
+
+                                    showBorder: true
+
+                                    tooltip: url
+
+                                    onClicked: Qt.openUrlExternally(url)
+                                }
+
+                                ImageButton {
+                                    property string url: "http://docs.rdm.dev/en/latest/quick-start/#heroku-redis"
+
+                                    Layout.fillWidth: true
+                                    implicitHeight: tileGrid.tileSize
+
+                                    imgWidth: tileGrid.tileIconSize
+                                    imgHeight: tileGrid.tileIconSize
+
+                                    iconSource: "qrc:/images/heroku_logo.svg"
+
+                                    showBorder: true
+
+                                    tooltip: url
+
+                                    onClicked: Qt.openUrlExternally(url)
+                                }                               
+                            }
+
+                            ColumnLayout {
+                                Layout.fillWidth: true
+                                Layout.fillHeight: true
+                                Layout.topMargin: 10
+
+                                SettingsGroupTitle {
+                                    text: qsTranslate("RDM",'Cannot figure out how to connect to your redis-server?')
+                                }
+
+                                RichTextWithLinks {
+                                    Layout.fillWidth: true
+                                    wrapMode: Text.WrapAnywhere
+                                    html: qsTranslate("RDM",'<a href="https://docs.rdm.dev/en/latest/quick-start/">Read the Docs</a>, '
+                                                      + '<a href="mailto:support@rdm.dev">Contact Support</a> '
+                                                      + 'or ask for help in our <a href="https://t.me/RedisDesktopManager">Telegram Group</a>')
+                                }
+                            }
+
+                            ColumnLayout {
+                                Layout.fillWidth: true
+                                Layout.fillHeight: true
+                                Layout.topMargin: 10
+
+                                SettingsGroupTitle {
+                                    text: qsTranslate("RDM","Don't have running Redis?")
+                                }
+
+                                RichTextWithLinks {
+                                    Layout.fillWidth: true
+                                    wrapMode: Text.WrapAnywhere
+                                    html: '<a href="https://do.co/3humIhx">' + qsTranslate("RDM",'Spin up hassle-free Redis on Digital Ocean') + '</a>'
+                                }
+                            }
+
+                            RowLayout {
+
+                                Item { Layout.fillWidth: true }
+
+                                Item { Layout.fillHeight: true }
+
+                                BetterButton {
+                                    id: skipToNextTabBtn
+                                    text: qsTranslate("RDM","Skip")
+                                    onClicked: {
+                                        connectionSettingsTabBar.currentIndex = 1
+                                    }
+
+                                    Keys.onEnterPressed: {
+                                        skipToNextTabBtn.clicked()
+                                    }
+
+                                    Keys.onReturnPressed: {
+                                        skipToNextTabBtn.clicked()
+                                    }
+                                }
+                            }
+                        }
+                    }
 
                     BetterTab {
                         id: mainTab
@@ -422,6 +725,7 @@ Dialog {
                                     }
                                 }
                             }
+
                             Item { Layout.fillHeight: true }
                         }
 
@@ -536,6 +840,8 @@ Dialog {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 30
 
+                    visible: !isNewConnection || isNewConnection && connectionSettingsTabBar.currentIndex != 0
+
                     BetterButton {
                         objectName: "rdm_connection_settings_dialog_test_btn"
                         iconSource: "qrc:/images/offline.svg"
@@ -550,6 +856,7 @@ Dialog {
                         iconSource: "qrc:/images/help.svg"
                         text: qsTranslate("RDM","Quick Start Guide")
                         onClicked: Qt.openUrlExternally(root.quickStartGuideUrl)
+                        visible: !isNewConnection
                     }
 
                     Item { Layout.fillWidth: true }

@@ -2,13 +2,29 @@
 #include <QPalette>
 #include <QSettings>
 
-bool isWindowsDarkThemeEnabled() {
-  QSettings settings(
+bool isDarkThemeEnabled() {
+#if defined(Q_OS_WINDOWS)
+  QSettings settings;
+  QSettings systemSettings(
       "HKEY_CURRENT_"
       "USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
       QSettings::NativeFormat);
 
-  return settings.value("AppsUseLightTheme") == 0;
+  QString darkMode = settings.value("app/darkMode", "Auto").toString();
+  if (darkMode == "Auto") {
+      return systemSettings.value("AppsUseLightTheme") == 0;
+  } else if (darkMode == "On") {
+      return true;
+  } else {
+      return false;
+  }
+#elif defined(Q_OS_LINUX)
+  QSettings settings;
+
+  return settings.value("app/darkModeOn", false).toBool();
+#else
+  return false;
+#endif
 }
 
 QPalette createDarkModePalette() {
@@ -16,6 +32,7 @@ QPalette createDarkModePalette() {
   QColor base = QColor(30, 30, 30);
   QColor alt = QColor(50, 50, 50);
   QColor text = QColor(223, 223, 223);
+  QColor buttonText = QColor(170, 170, 170);
   QColor disabledColor = QColor(127, 127, 127);
 
   QPalette p(alt, base);
@@ -33,7 +50,7 @@ QPalette createDarkModePalette() {
   p.setColor(QPalette::Text, text);
   p.setColor(QPalette::Disabled, QPalette::Text, disabledColor);
   p.setColor(QPalette::Button, alt);
-  p.setColor(QPalette::ButtonText, text);
+  p.setColor(QPalette::ButtonText, buttonText);
   p.setColor(QPalette::Disabled, QPalette::ButtonText, disabledColor);
   p.setColor(QPalette::BrightText, text.lighter(80));
   p.setColor(QPalette::Link, QColor(42, 130, 218));

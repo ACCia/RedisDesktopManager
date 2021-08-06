@@ -4,9 +4,12 @@
 #
 #-------------------------------------------------
 
-DEFINES += ENABLE_EXTERNAL_FORMATTERS
-HEADERS += $$_PRO_FILE_PWD_/modules/value-editor/externalformattersmanager.h
-SOURCES += $$_PRO_FILE_PWD_/modules/value-editor/externalformattersmanager.cpp
+exists( $$_PRO_FILE_PWD_/modules/value-editor/externalformattersmanager.h) {
+    message("External formatters was enabled")
+    DEFINES += ENABLE_EXTERNAL_FORMATTERS
+    HEADERS += $$_PRO_FILE_PWD_/modules/value-editor/externalformattersmanager.h
+    SOURCES += $$_PRO_FILE_PWD_/modules/value-editor/externalformattersmanager.cpp
+}
 
 # qredisclient
 if(win32*):exists( $$PWD/qredisclient/qredisclient.lib ) {
@@ -32,6 +35,13 @@ include($$PWD/pyotherside.pri)
 #LZ4
 LZ4DIR = $$PWD/lz4/
 INCLUDEPATH += $$LZ4DIR/lib
+
+#SIMDJSON
+SIMDJSONDIR = $$PWD/simdjson/singleheader
+INCLUDEPATH += $$SIMDJSONDIR/
+HEADERS += $$SIMDJSONDIR/simdjson.h
+SOURCES += $$SIMDJSONDIR/simdjson.cpp
+
 
 win32* {
     ZLIBDIR = $$PWD/zlib-msvc14-x64.1.2.11.7795/build/native    

@@ -29,33 +29,33 @@
         <translation>RDM 不能保存设置文件。请更改文件写入权限或者以管理员模式启动 RDM。</translation>
     </message>
     <message>
-        <location filename="../../app/models/key-models/abstractkey.h" line="82"/>
+        <location filename="../../app/models/key-models/abstractkey.h" line="85"/>
         <source>Cannot rename key %1: %2</source>
         <translation>无法重命名键 %1: %2</translation>
     </message>
     <message>
-        <location filename="../../app/models/key-models/abstractkey.h" line="126"/>
+        <location filename="../../app/models/key-models/abstractkey.h" line="129"/>
         <source>Cannot persist key &apos;%1&apos;. &lt;br&gt; Key does not exist or does not have an assigned TTL value</source>
         <translation type="unfinished">无法持久化键 &apos;%1&apos;，&lt;br&gt; 键不存在或没有设置TTL时长</translation>
     </message>
     <message>
-        <location filename="../../app/models/key-models/abstractkey.h" line="161"/>
+        <location filename="../../app/models/key-models/abstractkey.h" line="164"/>
         <source>Cannot parse scan response</source>
         <translation type="unfinished">无法解析扫描结果</translation>
     </message>
     <message>
-        <location filename="../../app/models/key-models/abstractkey.h" line="321"/>
+        <location filename="../../app/models/key-models/abstractkey.h" line="324"/>
         <source>Server returned unexpected response: </source>
         <translation type="unfinished">服务器返回了意外结果：</translation>
     </message>
     <message>
-        <location filename="../../app/models/key-models/abstractkey.h" line="107"/>
+        <location filename="../../app/models/key-models/abstractkey.h" line="110"/>
         <source>Cannot set TTL for key %1</source>
         <translation>无法给键 %1 设置 TTL</translation>
     </message>
     <message>
-        <location filename="../../app/models/key-models/abstractkey.h" line="267"/>
-        <location filename="../../app/models/key-models/abstractkey.h" line="278"/>
+        <location filename="../../app/models/key-models/abstractkey.h" line="270"/>
+        <location filename="../../app/models/key-models/abstractkey.h" line="281"/>
         <source>Cannot load rows for key %1: %2</source>
         <translation>无法加载键内容 %1: %2</translation>
     </message>
@@ -79,8 +79,8 @@
         <translation type="unfinished">同名键值已经存在</translation>
     </message>
     <message>
-        <location filename="../../app/models/key-models/abstractkey.h" line="185"/>
-        <location filename="../../app/models/key-models/abstractkey.h" line="333"/>
+        <location filename="../../app/models/key-models/abstractkey.h" line="188"/>
+        <location filename="../../app/models/key-models/abstractkey.h" line="336"/>
         <location filename="../../app/models/treeoperations.cpp" line="154"/>
         <location filename="../../modules/console/consolemodel.cpp" line="89"/>
         <source>Connection error: </source>
@@ -382,17 +382,17 @@
         <translation>无法使用 %1 编码键值</translation>
     </message>
     <message>
-        <location filename="../../modules/value-editor/tabsmodel.cpp" line="25"/>
+        <location filename="../../modules/value-editor/tabsmodel.cpp" line="26"/>
         <source>Loading key: %1 from db %2</source>
         <translation type="unfinished">从 db %2 加载 key: %1</translation>
     </message>
     <message>
-        <location filename="../../modules/value-editor/tabsmodel.cpp" line="36"/>
+        <location filename="../../modules/value-editor/tabsmodel.cpp" line="68"/>
         <source>Cannot open value tab</source>
         <translation>无法打开键值对话框</translation>
     </message>
     <message>
-        <location filename="../../modules/value-editor/tabsmodel.cpp" line="71"/>
+        <location filename="../../modules/value-editor/tabsmodel.cpp" line="101"/>
         <source>Connection error. Can&apos;t open value tab. </source>
         <translation>连接错误，无法打开键值对话框。</translation>
     </message>
@@ -413,7 +413,8 @@
     </message>
     <message>
         <location filename="../../qml/AppToolBar.qml" line="40"/>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="111"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="206"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="114"/>
         <source>Import</source>
         <translation type="unfinished">导入</translation>
     </message>
@@ -476,246 +477,309 @@
         <translation>新连接设置</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="132"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="144"/>
+        <source>How to connect</source>
+        <translation type="unfinished">怎么连接</translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="151"/>
         <source>Connection Settings</source>
         <translation>连接设置</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="165"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="180"/>
+        <source>Create connection from Redis URL</source>
+        <translation type="unfinished">从Redis URL创建连接</translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="233"/>
+        <source>Learn more about Redis URL:  </source>
+        <translation type="unfinished">认识Redis URL: </translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="241"/>
+        <source>Connection guides</source>
+        <translation type="unfinished">连接向导</translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="262"/>
+        <source>Local or Public Redis</source>
+        <translation type="unfinished">本地或对外的Redis</translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="278"/>
+        <source>Redis with SSL/TLS</source>
+        <translation type="unfinished">使用SSL/TLS的Redis</translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="294"/>
+        <source>SSH tunnel</source>
+        <translation type="unfinished">SSH通道</translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="310"/>
+        <source>UNIX socket</source>
+        <translation type="unfinished">UNIX套接字</translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="397"/>
+        <source>Cannot figure out how to connect to your redis-server?</source>
+        <translation type="unfinished">不知道怎么连接到您的Redis服务端吗？</translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="403"/>
+        <source>&lt;a href=&quot;https://docs.rdm.dev/en/latest/quick-start/&quot;&gt;Read the Docs&lt;/a&gt;, &lt;a href=&quot;mailto:support@rdm.dev&quot;&gt;Contact Support&lt;/a&gt; or ask for help in our &lt;a href=&quot;https://t.me/RedisDesktopManager&quot;&gt;Telegram Group&lt;/a&gt;</source>
+        <translation type="unfinished">&lt;a href=&quot;https://docs.rdm.dev/en/latest/quick-start/&quot;&gt;查看文档&lt;/a&gt;, &lt;a href=&quot;mailto:support@rdm.dev&quot;&gt;联系支持&lt;/a&gt; 或者点这里寻求帮助 &lt;a href=&quot;https://t.me/RedisDesktopManager&quot;&gt;Telegram Group&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="415"/>
+        <source>Don&apos;t have running Redis?</source>
+        <translation type="unfinished">Redis没有启动吗？</translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="421"/>
+        <source>Spin up hassle-free Redis on Digital Ocean</source>
+        <translation type="unfinished">快速使用Digital Ocean上的Redis</translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="433"/>
+        <source>Skip</source>
+        <translation type="unfinished">跳过</translation>
+    </message>
+    <message>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="468"/>
         <source>Name:</source>
         <translation>名字：</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="171"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="474"/>
         <source>Connection Name</source>
         <translation>连接名</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="177"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="480"/>
         <source>Address:</source>
         <translation>地址</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="182"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="485"/>
         <source>redis-server host</source>
         <translation>Redis 服务器地址</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="206"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="509"/>
         <source>(Optional) redis-server authentication password</source>
         <translation>(可选) Redis 服务器验证密码</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="225"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="528"/>
         <source>Security</source>
         <translation>安全</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="256"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="559"/>
         <source>Public Key:</source>
         <translation>公钥：</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="262"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="565"/>
         <source>(Optional) Public Key in PEM format</source>
         <translation>(可选) PEM 格式公钥</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="264"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="567"/>
         <source>Select public key in PEM format</source>
         <translation>选择 PEM 格式公钥</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="275"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="578"/>
         <source>(Optional) Private Key in PEM format</source>
         <translation>(可选) PEM 格式私钥</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="277"/>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="371"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="580"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="674"/>
         <source>Select private key in PEM format</source>
         <translation>选择 PEM 格式私钥</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="282"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="585"/>
         <source>Authority:</source>
         <translation>授权：</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="288"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="591"/>
         <source>(Optional) Authority in PEM format</source>
         <translation>(可选) PEM 格式授权</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="290"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="593"/>
         <source>Select authority file in PEM format</source>
         <translation>选择 PEM 格式授权文件</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="309"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="612"/>
         <source>SSH Tunnel</source>
         <translation>SSH 通道</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="328"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="631"/>
         <source>SSH Address:</source>
         <translation>SSH 地址：</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="332"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="635"/>
         <source>Remote Host with SSH server</source>
         <translation>SSH 远程服务器</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="340"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="643"/>
         <source>SSH User:</source>
         <translation>SSH 用户：</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="346"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="649"/>
         <source>Valid SSH User Name</source>
         <translation>验证 SSH 用户名</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="269"/>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="353"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="572"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="656"/>
         <source>Private Key</source>
         <translation>私钥</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="369"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="672"/>
         <source>Path to Private Key in PEM format</source>
         <translation>PEM 格式私钥路径</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="379"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="682"/>
         <source>&lt;b&gt;Tip:&lt;/b&gt; Use &lt;code&gt;⌘ + Shift + .&lt;/code&gt; to show hidden files and folders in dialog</source>
         <translation>&lt;b&gt;提示：&lt;/b&gt; 使用 &lt;code&gt;⌘ + Shift + .&lt;/code&gt; 在对话框中显示隐藏文件和文件夹</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="384"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="687"/>
         <source>Password</source>
         <translation>密码</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="395"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="698"/>
         <source>SSH User Password</source>
         <translation>SSH 用户密码</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="406"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="709"/>
         <source>Enable TLS-over-SSH (&lt;b&gt;AWS ElastiCache&lt;/b&gt; &lt;b&gt;Encryption in-transit&lt;/b&gt;)</source>
         <translation>启用 TLS-over-SSH (&lt;b&gt;AWS ElastiCache&lt;/b&gt; &lt;b&gt;Encryption in-transit&lt;/b&gt;)</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="137"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="156"/>
         <source>Advanced Settings</source>
         <translation>高级设置</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="193"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="496"/>
         <source>For better network performance please use 127.0.0.1</source>
         <translation type="unfinished">请使用127.0.0.1获得更好的网络连接速度</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="211"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="514"/>
         <source>Username:</source>
         <translation type="unfinished">用户名:</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="217"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="520"/>
         <source>(Optional) redis-server authentication username (Redis &gt;6.0)</source>
         <translation type="unfinished">可选：服务端认证用户名 (Redis &gt;6.0)</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="236"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="539"/>
         <source>SSL / TLS</source>
         <translation type="unfinished">SSL / TLS</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="295"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="598"/>
         <source>Enable strict mode:</source>
         <translation type="unfinished">打开严格模式: </translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="442"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="746"/>
         <source>Keys loading</source>
         <translation>键加载</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="446"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="750"/>
         <source>Default filter:</source>
         <translation>默认过滤：</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="452"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="756"/>
         <source>Pattern which defines loaded keys from redis-server</source>
         <translation>指定加载键名表达式：</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="458"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="762"/>
         <source>Namespace Separator:</source>
         <translation>命名空间分隔符：</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="465"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="769"/>
         <source>Separator used for namespace extraction from keys</source>
         <translation>键名中命名空间分隔符</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="471"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="775"/>
         <source>Timeouts &amp; Limits</source>
         <translation>设置超时和限制</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="475"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="779"/>
         <source>Connection Timeout (sec):</source>
         <translation>连接超时 (秒)：</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="488"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="792"/>
         <source>Execution Timeout (sec):</source>
         <translation>执行超时 (秒)：</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="499"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="803"/>
         <source>Databases discovery limit:</source>
         <translation>数据库发现限制：</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="513"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="817"/>
         <source>Cluster</source>
         <translation>集群</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="517"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="821"/>
         <source>Change host on cluster redirects:</source>
         <translation>修改集群重定向：</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="570"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="877"/>
         <source>Invalid settings detected!</source>
         <translation>检测到无效的设置！</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="542"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="848"/>
         <source>Test Connection</source>
         <translation>测试连接</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="578"/>
-        <location filename="../../qml/GlobalSettings.qml" line="304"/>
-        <location filename="../../qml/QuickStartDialog.qml" line="62"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="885"/>
+        <location filename="../../qml/GlobalSettings.qml" line="339"/>
         <location filename="../../qml/common/SaveToFileButton.qml" line="114"/>
         <location filename="../../qml/value-editor/editors/MultilineEditor.qml" line="715"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="200"/>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="592"/>
-        <location filename="../../qml/GlobalSettings.qml" line="316"/>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="396"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="899"/>
+        <location filename="../../qml/GlobalSettings.qml" line="351"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="399"/>
         <location filename="../../qml/common/BetterDialog.qml" line="44"/>
         <location filename="../../qml/connections-tree/ConnectionGroupDialog.qml" line="62"/>
         <location filename="../../qml/value-editor/AddKeyDialog.qml" line="107"/>
@@ -735,147 +799,148 @@
         <translation>重启软件来启用新的设置。</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="70"/>
+        <location filename="../../qml/GlobalSettings.qml" line="72"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="299"/>
         <source>Application will be restarted to apply this setting.</source>
-        <translation type="unfinished">新设置将在软件重启后生效</translation>
+        <translation type="obsolete">新设置将在软件重启后生效</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="82"/>
-        <location filename="../../qml/GlobalSettings.qml" line="142"/>
+        <location filename="../../qml/GlobalSettings.qml" line="84"/>
+        <location filename="../../qml/GlobalSettings.qml" line="175"/>
         <source>Font</source>
         <translation>字体</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="95"/>
-        <location filename="../../qml/GlobalSettings.qml" line="155"/>
+        <location filename="../../qml/GlobalSettings.qml" line="97"/>
+        <location filename="../../qml/GlobalSettings.qml" line="188"/>
         <source>Font Size</source>
         <translation>字体大小</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="169"/>
+        <location filename="../../qml/GlobalSettings.qml" line="110"/>
+        <location filename="../../qml/GlobalSettings.qml" line="124"/>
+        <source>Dark Mode</source>
+        <translation type="unfinished">暗色模式</translation>
+    </message>
+    <message>
+        <location filename="../../qml/GlobalSettings.qml" line="202"/>
         <source>Maximum Formatted Value Size</source>
         <translation type="unfinished">最大格式化长度</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="170"/>
+        <location filename="../../qml/GlobalSettings.qml" line="203"/>
         <source>Size in bytes</source>
         <translation type="unfinished">字节长度</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="298"/>
-        <location filename="../../qml/GlobalSettings.qml" line="107"/>
+        <location filename="../../qml/GlobalSettings.qml" line="138"/>
         <source>Use system proxy settings</source>
         <translation>使用系统代理设置</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="120"/>
+        <location filename="../../qml/GlobalSettings.qml" line="150"/>
         <source>Use system proxy only for HTTP(S) requests</source>
         <translation type="unfinished">只对HTTP(S)请求使用系统代理设置</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="126"/>
+        <location filename="../../qml/GlobalSettings.qml" line="156"/>
         <source>Value Editor</source>
         <translation type="unfinished">内容编辑器</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="176"/>
+        <location filename="../../qml/GlobalSettings.qml" line="209"/>
         <source>Connections Tree</source>
         <translation>连接树</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="192"/>
+        <location filename="../../qml/GlobalSettings.qml" line="227"/>
         <source>Show namespaced keys on top</source>
         <translation type="unfinished">在头部展示命名空间键名</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="202"/>
+        <location filename="../../qml/GlobalSettings.qml" line="237"/>
         <source>Reopen namespaces on reload</source>
         <translation>重载时重新打开命名空间</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="203"/>
+        <location filename="../../qml/GlobalSettings.qml" line="238"/>
         <source>(Disable to improve treeview performance)</source>
         <translation>(禁用树状视图提高性能)</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="213"/>
+        <location filename="../../qml/GlobalSettings.qml" line="248"/>
         <source>Show only last part for namespaced keys</source>
         <translation type="unfinished">仅显示命名空间中键名最后一部分内容</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="225"/>
+        <location filename="../../qml/GlobalSettings.qml" line="260"/>
         <source>Live update maximum allowed keys</source>
         <translation>实时更新最大允许键数量</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="237"/>
+        <location filename="../../qml/GlobalSettings.qml" line="272"/>
         <source>Live update interval (in seconds)</source>
         <translation>实时更新间隔 (秒)</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="247"/>
+        <location filename="../../qml/GlobalSettings.qml" line="282"/>
         <source>External Value View Formatters</source>
         <translation type="unfinished">外部键值格式化配置</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="256"/>
+        <location filename="../../qml/GlobalSettings.qml" line="291"/>
         <source>Formatters path: %0</source>
         <translation>格式化配置路径：%0</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="273"/>
+        <location filename="../../qml/GlobalSettings.qml" line="308"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="278"/>
+        <location filename="../../qml/GlobalSettings.qml" line="313"/>
         <location filename="../../qml/WelcomeTab.qml" line="30"/>
         <source>Version</source>
         <translation>版本</translation>
     </message>
     <message>
-        <location filename="../../qml/QuickStartDialog.qml" line="11"/>
         <source>Explore RDM</source>
-        <translation>探索 RDM</translation>
+        <translation type="vanished">探索 RDM</translation>
     </message>
     <message>
-        <location filename="../../qml/QuickStartDialog.qml" line="45"/>
         <source>Before using RDM take a look on the %1</source>
-        <translation>在使用  RDM 之前，请看看 %1</translation>
+        <translation type="vanished">在使用  RDM 之前，请看看 %1</translation>
     </message>
     <message>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="551"/>
-        <location filename="../../qml/QuickStartDialog.qml" line="46"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="857"/>
         <source>Quick Start Guide</source>
         <translation>快速入门指南</translation>
     </message>
     <message>
-        <location filename="../../qml/app.qml" line="109"/>
+        <location filename="../../qml/app.qml" line="111"/>
         <source>Successful connection to redis-server</source>
         <translation>连接 Redis 服务器成功</translation>
     </message>
     <message>
-        <location filename="../../qml/app.qml" line="112"/>
+        <location filename="../../qml/app.qml" line="114"/>
         <source>Can&apos;t connect to redis-server</source>
         <translation>无法连接 Redis 服务器</translation>
     </message>
     <message>
-        <location filename="../../qml/app.qml" line="254"/>
+        <location filename="../../qml/app.qml" line="282"/>
         <source>Add Group</source>
         <translation type="unfinished">添加组</translation>
     </message>
     <message>
-        <location filename="../../qml/app.qml" line="268"/>
+        <location filename="../../qml/app.qml" line="296"/>
         <source>Regroup connections</source>
         <translation type="unfinished">重组连接</translation>
     </message>
     <message>
-        <location filename="../../qml/app.qml" line="290"/>
+        <location filename="../../qml/app.qml" line="318"/>
         <source>Exit Regroup Mode</source>
         <translation type="unfinished">退出重组模式</translation>
     </message>
@@ -885,205 +950,216 @@
         <translation>批量操作管理</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="60"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="63"/>
         <source>Invalid RDB path</source>
         <translation type="unfinished">无效的RDB路径</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="60"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="63"/>
         <source>Please specify valid path to RDB file</source>
         <translation type="unfinished">请指定有效的RDB文件路径</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="82"/>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="83"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="85"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="86"/>
         <source>Delete keys</source>
         <translation>删除键</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="92"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="95"/>
         <source>Set TTL</source>
         <translation type="unfinished">设置TTL</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="100"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="103"/>
         <source>Copy keys to another database</source>
         <translation type="unfinished">复制键到其他库</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="101"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="104"/>
         <source>Copy keys</source>
         <translation>复制键</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="110"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="113"/>
         <source>Import data from rdb file</source>
         <translation type="unfinished">从RDB文件导入数据</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="145"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="148"/>
         <source>Redis Server:</source>
         <translation>Redis 服务器：</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="157"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="160"/>
         <source>Database number:</source>
         <translation>数据库编号：</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="177"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="180"/>
         <source>Path to RDB file:</source>
         <translation type="unfinished">RDB文件路径：</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="199"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="202"/>
         <source>Select DB in RDB file:</source>
         <translation type="unfinished">从RDB文件选择库：</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="219"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="222"/>
         <source>Key pattern:</source>
         <translation>键名表达式：</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="219"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="222"/>
         <source>Import keys that match &lt;b&gt;regex&lt;/b&gt;:</source>
         <translation type="unfinished">导入匹配&lt;b&gt;regex&lt;/b&gt;的键：</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="266"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="269"/>
         <source>Destination Redis Server:</source>
         <translation>目标 Redis 服务器：</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="277"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="280"/>
         <source>Destination Redis Server Database Index:</source>
         <translation>目标 Redis 数据库编号：</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="314"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="317"/>
         <source>Show matched keys</source>
         <translation type="unfinished">显示匹配的键</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="314"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="317"/>
         <source>Show Affected keys</source>
         <translation type="unfinished">显示受影响的键</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="337"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="340"/>
         <source>Affected keys:</source>
         <translation>受影响的键：</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="337"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="340"/>
         <source>Matched keys:</source>
         <translation type="unfinished">匹配的键：</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="362"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="365"/>
         <source>Bulk Operation finished.</source>
         <translation>批量操作完成。</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="367"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="370"/>
         <source>Bulk Operation finished with errors</source>
         <translation type="unfinished">批量操作完成，但发生了一些错误。</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="419"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="422"/>
         <source>Processed: </source>
         <translation type="unfinished">已处理：</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="421"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="424"/>
         <source>Getting list of affected keys...</source>
         <translation type="unfinished">获取受影响的键列表...</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="457"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="489"/>
         <source>Confirmation</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="458"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="490"/>
         <source>Do you really want to perform bulk operation?</source>
         <translation>确认要执行批量操作？</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="11"/>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="223"/>
         <source>Sign in with rdm.dev account</source>
-        <translation type="unfinished">使用 rdm.dev 账号登陆</translation>
+        <translation type="obsolete">使用 rdm.dev 账号登陆</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="166"/>
         <source>Renew your subscription</source>
-        <translation type="unfinished">更新订阅</translation>
+        <translation type="obsolete">更新订阅</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="167"/>
         <source>Your trial has ended.</source>
-        <translation type="unfinished">试用版已结束</translation>
+        <translation type="obsolete">试用版已结束</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="174"/>
+        <source>You have no active subscription</source>
+        <translation type="obsolete">您没有可用订阅</translation>
+    </message>
+    <message>
+        <source>No internet connection</source>
+        <translation type="obsolete">无网络</translation>
+    </message>
+    <message>
+        <source>Your trial has ended</source>
+        <translation type="obsolete">您的试用已结束</translation>
+    </message>
+    <message>
         <source>To use this version you need to renew your subscription.</source>
-        <translation type="unfinished">要继续使用该版本，需要更新你的订阅。</translation>
+        <translation type="obsolete">要继续使用该版本，需要更新你的订阅。</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="175"/>
+        <source>Please make sure that RDM is not blocked by a firewall and you have an internet connection.</source>
+        <translation type="obsolete">确保RDM没有被防火墙阻挡，并且网络正常</translation>
+    </message>
+    <message>
+        <source>If you’re behind a proxy please enable </source>
+        <translation type="obsolete">如果您处于代理之中，请启用代理</translation>
+    </message>
+    <message>
+        <source> option before sign-in.</source>
+        <translation type="obsolete"> 登陆前选项</translation>
+    </message>
+    <message>
         <source>Please purchase a subscription to continue using RDM.</source>
-        <translation type="unfinished">请购买一份订阅来继续使用RDM。</translation>
+        <translation type="obsolete">请购买一份订阅来继续使用RDM。</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="177"/>
         <source>If you have any questions please contact support </source>
-        <translation type="unfinished">遇到任何问题，请联系支持。</translation>
+        <translation type="obsolete">遇到任何问题，请联系支持。</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="187"/>
-        <location filename="../../modules/api/qml/SubscriptionInfo.qml" line="71"/>
         <source>Renew Subscription</source>
-        <translation type="unfinished">更新订阅</translation>
+        <translation type="obsolete">更新订阅</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="188"/>
-        <location filename="../../modules/api/qml/SubscriptionInfo.qml" line="32"/>
         <source>Buy Subscription</source>
-        <translation type="unfinished">购买订阅</translation>
+        <translation type="obsolete">购买订阅</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="237"/>
+        <source>Try Again</source>
+        <translation type="obsolete">重试</translation>
+    </message>
+    <message>
         <source>Email:</source>
-        <translation type="unfinished">邮箱：</translation>
+        <translation type="obsolete">邮箱：</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="253"/>
-        <location filename="../../qml/ConnectionSettignsDialog.qml" line="200"/>
+        <location filename="../../qml/ConnectionSettignsDialog.qml" line="503"/>
         <source>Password:</source>
         <translation type="unfinished">密码：</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="276"/>
         <location filename="../../qml/common/PasswordInput.qml" line="20"/>
         <source>Show password</source>
         <translation>显示密码</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="282"/>
         <source>Forgot password?</source>
-        <translation type="unfinished">忘记密码？</translation>
+        <translation type="obsolete">忘记密码？</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="307"/>
         <source>Sign In</source>
-        <translation type="unfinished">登录</translation>
+        <translation type="obsolete">登录</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SignInDialog.qml" line="312"/>
         <source>Please enter email &amp; password to sign in.</source>
-        <translation type="unfinished">请输入邮箱和密码来登录。</translation>
+        <translation type="obsolete">请输入邮箱和密码来登录。</translation>
     </message>
     <message>
         <location filename="../../qml/connections-tree/BetterTreeView.qml" line="214"/>
@@ -1144,7 +1220,7 @@
         <translation type="unfinished">使用过滤器删除键</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="91"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="94"/>
         <location filename="../../qml/connections-tree/menu/database.qml" line="126"/>
         <source>Set TTL for multiple keys</source>
         <translation type="unfinished">设置多个键的TTL</translation>
@@ -1193,7 +1269,7 @@
     </message>
     <message>
         <location filename="../../qml/connections-tree/menu/server.qml" line="19"/>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="238"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="239"/>
         <source>Server Info</source>
         <translation>服务器信息</translation>
     </message>
@@ -1239,7 +1315,7 @@
         <translation>参数</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="288"/>
+        <location filename="../../qml/GlobalSettings.qml" line="323"/>
         <location filename="../../qml/console/RedisConsole.qml" line="239"/>
         <source>Description</source>
         <translation>描述</translation>
@@ -1255,180 +1331,180 @@
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="108"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="109"/>
         <source>Redis Version</source>
         <translation>Redis 版本</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="123"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="124"/>
         <source>Used memory</source>
         <translation>已使用的内存</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="138"/>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="246"/>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="350"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="139"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="247"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="351"/>
         <source>Clients</source>
         <translation>客户端</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="153"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="154"/>
         <source>Commands Processed</source>
         <translation>已执行的命令</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="170"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="171"/>
         <source>Uptime</source>
         <translation>正常运行时间</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="185"/>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="487"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="186"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="488"/>
         <source>Total Keys</source>
         <translation type="unfinished">键总量</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="200"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="201"/>
         <source>Hit Ratio</source>
         <translation type="unfinished">命中率</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="220"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="221"/>
         <source> day(s)</source>
         <translation> 天</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="234"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="235"/>
         <source>Info</source>
         <translation type="unfinished">信息</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="298"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="299"/>
         <source>Commands Per Second</source>
         <translation type="unfinished">每秒执行命令数</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="312"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="313"/>
         <source>Ops/s</source>
         <translation type="unfinished">每秒查询率</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="336"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="337"/>
         <source>Connected Clients</source>
         <translation type="unfinished">已连接的客户端数量</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="374"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="375"/>
         <source>Memory Usage</source>
         <translation>内存占用</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="386"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="387"/>
         <source>Mb</source>
         <translation>Mb</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="415"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="416"/>
         <source>Network Input</source>
         <translation type="unfinished">网络输入</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="427"/>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="463"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="428"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="464"/>
         <source>Kb/s</source>
         <translation type="unfinished">Kb/s</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="451"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="452"/>
         <source>Network Output</source>
         <translation type="unfinished">网络输出</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="501"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="502"/>
         <source>Keys</source>
         <translation type="unfinished">键数量</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="584"/>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="692"/>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="749"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="585"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="693"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="759"/>
         <source>Auto Refresh</source>
         <translation>自动刷新</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="618"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="619"/>
         <source>Property</source>
         <translation>属性</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="624"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="625"/>
         <location filename="../../qml/value-editor/editors/MultilineEditor.qml" line="22"/>
         <source>Value</source>
         <translation>键值</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="837"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="847"/>
         <source>Subscribe in Console</source>
         <translation type="unfinished">控制台订阅</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="242"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="243"/>
         <source>Slowlog</source>
         <translation>慢查询日志</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="251"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="252"/>
         <source>Pub/Sub Channels</source>
         <translation type="unfinished">推送/订阅 通道</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="807"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="817"/>
         <source>Enable</source>
         <translation type="unfinished">启用</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="826"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="836"/>
         <source>Channel Name</source>
         <translation type="unfinished">通道名</translation>
     </message>
     <message>
-        <location filename="../../qml/GlobalSettings.qml" line="282"/>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="707"/>
+        <location filename="../../qml/GlobalSettings.qml" line="317"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="708"/>
         <source>Command</source>
         <translation>指令</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="724"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="725"/>
         <source>Processed at</source>
         <translation>处理于</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="730"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="740"/>
         <source>Execution Time (μs)</source>
         <translation>执行时长 (μs)</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="764"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="774"/>
         <source>Client Address</source>
         <translation>客户端地址</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="770"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="780"/>
         <source>Age (sec)</source>
         <translation>时长 (sec)</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="776"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="786"/>
         <source>Idle</source>
         <translation>空闲</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="782"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="792"/>
         <source>Flags</source>
         <translation>标记</translation>
     </message>
     <message>
-        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="788"/>
+        <location filename="../../qml/server-info/ServerInfoTabs.qml" line="798"/>
         <source>Current Database</source>
         <translation>当前库</translation>
     </message>
@@ -1571,12 +1647,12 @@
         <translation>分数</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="188"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="191"/>
         <source>Path to dump.rdb file</source>
         <translation type="unfinished">导出为 dump.rdb 文件的路径</translation>
     </message>
     <message>
-        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="190"/>
+        <location filename="../../qml/bulk-operations/BulkOperationsDialog.qml" line="193"/>
         <source>Select dump.rdb</source>
         <translation type="unfinished">选择 dump.rdb</translation>
     </message>
@@ -1641,56 +1717,44 @@
         <translation type="unfinished">键已经添加。需要重新加载选中的命名空间中的键吗？</translation>
     </message>
     <message>
-        <location filename="../../modules/api/api_client.cpp" line="146"/>
         <source>Network is not accessible. Please ensure that you have internet access and try again.</source>
-        <translation type="unfinished">网络无效，请确保已经连上互联网，然后重试。</translation>
+        <translation type="obsolete">网络无效，请确保已经连上互联网，然后重试。</translation>
     </message>
     <message>
-        <location filename="../../modules/api/api_client.cpp" line="189"/>
         <source>Invalid login or password</source>
-        <translation type="unfinished">无效的账号或密码</translation>
+        <translation type="obsolete">无效的账号或密码</translation>
     </message>
     <message>
-        <location filename="../../modules/api/api_client.cpp" line="196"/>
         <source>Too many requests from your IP</source>
-        <translation type="unfinished">过多请求来源你的IP</translation>
+        <translation type="obsolete">过多请求来源你的IP</translation>
     </message>
     <message>
-        <location filename="../../modules/api/api_client.cpp" line="199"/>
         <source>Unknown error. Status code %1</source>
-        <translation type="unfinished">未知错误，状态码 %1</translation>
+        <translation type="obsolete">未知错误，状态码 %1</translation>
     </message>
     <message>
-        <location filename="../../modules/api/api_client.cpp" line="219"/>
-        <location filename="../../modules/api/api_client.cpp" line="321"/>
         <source>Cannot parse server reply</source>
-        <translation type="unfinished">无法解析服务器响应</translation>
+        <translation type="obsolete">无法解析服务器响应</translation>
     </message>
     <message>
-        <location filename="../../modules/api/api_client.cpp" line="341"/>
         <source>Cannot validate token</source>
-        <translation type="unfinished">无法效验令牌</translation>
+        <translation type="obsolete">无法效验令牌</translation>
     </message>
     <message>
-        <location filename="../../modules/api/api_client.cpp" line="347"/>
         <source>Cannot login - %1. &lt;br/&gt; Please try again or contact  &lt;a href=&apos;mailto:support@rdm.dev&apos;&gt;support@rdm.dev&lt;/a&gt;</source>
-        <translation type="unfinished">无法登录 - %1。&lt;br/&gt; 请重试。或直接联系 &lt;a href=&apos;mailto:support@rdm.dev&apos;&gt;support@rdm.dev&lt;/a&gt;</translation>
+        <translation type="obsolete">无法登录 - %1。&lt;br/&gt; 请重试。或直接联系 &lt;a href=&apos;mailto:support@rdm.dev&apos;&gt;support@rdm.dev&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../../modules/api/api_client.cpp" line="581"/>
-        <location filename="../../modules/api/api_client.cpp" line="607"/>
         <source>Cannot save the update. Disk is full or download folder is not writable.</source>
-        <translation type="unfinished">无法保存更新文件，磁盘已满或下载目录无法写入。</translation>
+        <translation type="obsolete">无法保存更新文件，磁盘已满或下载目录无法写入。</translation>
     </message>
     <message>
-        <location filename="../../modules/api/api_client.cpp" line="659"/>
         <source>Download was canceled</source>
-        <translation type="unfinished">下载已取消</translation>
+        <translation type="obsolete">下载已取消</translation>
     </message>
     <message>
-        <location filename="../../modules/api/api_client.cpp" line="666"/>
         <source>Network error</source>
-        <translation type="unfinished">网络错误</translation>
+        <translation type="obsolete">网络错误</translation>
     </message>
     <message>
         <location filename="../../qml/common/FilePathInput.qml" line="27"/>
@@ -1791,32 +1855,45 @@
         <translation type="unfinished">应用筛选条件</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SubscriptionInfo.qml" line="19"/>
-        <location filename="../../modules/api/qml/SubscriptionInfo.qml" line="25"/>
-        <location filename="../../modules/api/qml/SubscriptionInfo.qml" line="49"/>
         <source>Trial is active till</source>
-        <translation type="unfinished">试用到</translation>
+        <translation type="obsolete">试用到</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SubscriptionInfo.qml" line="58"/>
-        <location filename="../../modules/api/qml/SubscriptionInfo.qml" line="59"/>
         <source>Licensed to</source>
-        <translation type="unfinished">授权给</translation>
+        <translation type="obsolete">授权给</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SubscriptionInfo.qml" line="66"/>
         <source>Subscription is active until:</source>
-        <translation type="unfinished">订阅到期时间为：</translation>
+        <translation type="obsolete">订阅到期时间为：</translation>
     </message>
     <message>
-        <location filename="../../modules/api/qml/SubscriptionInfo.qml" line="71"/>
         <source>Manage Subscription</source>
-        <translation type="unfinished">管理订阅</translation>
+        <translation type="obsolete">管理订阅</translation>
     </message>
     <message>
         <location filename="../../qml/WelcomeTab.qml" line="31"/>
         <source>&lt;span style=&quot;font-size: 11px;&quot;&gt;Powered by awesome &lt;a href=&quot;https://github.com/uglide/RedisDesktopManager/tree/2021/3rdparty&quot;&gt;open-source software&lt;/a&gt; and &lt;a href=&quot;http://icons8.com/&quot;&gt;icons8&lt;/a&gt;.&lt;/span&gt;</source>
         <translation type="unfinished">&lt;span style=&quot;font-size: 11px;&quot;&gt;Powered by awesome &lt;a href=&quot;https://github.com/uglide/RedisDesktopManager/tree/2021/3rdparty&quot;&gt;open-source software&lt;/a&gt; and &lt;a href=&quot;http://icons8.com/&quot;&gt;icons8&lt;/a&gt;.&lt;/span&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../qml/QuickStartDialog.qml" line="11"/>
+        <source>Getting Started</source>
+        <translation type="unfinished">使用入门</translation>
+    </message>
+    <message>
+        <location filename="../../qml/QuickStartDialog.qml" line="41"/>
+        <source>Thank you for choosing RDM. Let&apos;s make your Redis experience better.</source>
+        <translation type="unfinished">感谢您选择RDM，我们一起让Redis有更好的体验。</translation>
+    </message>
+    <message>
+        <location filename="../../qml/QuickStartDialog.qml" line="59"/>
+        <source>Connect to Redis-Server</source>
+        <translation type="unfinished">连接到Redis服务器</translation>
+    </message>
+    <message>
+        <location filename="../../qml/QuickStartDialog.qml" line="72"/>
+        <source>Read the Docs</source>
+        <translation type="unfinished">阅读文档</translation>
     </message>
 </context>
 </TS>

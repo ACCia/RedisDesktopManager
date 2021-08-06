@@ -54,7 +54,9 @@ Dialog {
                     }
 
                     GridLayout {
-                        columns: 3
+                        columns: 2
+                        rows: 3
+                        flow: GridLayout.TopToBottom
                         Layout.fillWidth: true
                         rowSpacing: 10
                         columnSpacing: 15
@@ -97,6 +99,35 @@ Dialog {
                             onValueChanged: root.restartRequired = true
                         }
 
+                        ComboboxOption {
+                            id: darkModeWindows
+
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 30
+
+                            model: ["Auto", "On", "Off"]
+                            value: "Auto"
+                            label: qsTranslate("RDM","Dark Mode")
+
+                            visible: PlatformUtils.isWindows()
+
+                            onValueChanged: root.restartRequired = true
+                        }
+
+                        BoolOption {
+                            id: darkModeLinux
+
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 30
+
+                            value: false
+                            label: qsTranslate("RDM","Dark Mode")
+
+                            visible: PlatformUtils.isLinux()
+
+                            onValueChanged: root.restartRequired = true
+                        }
+
                         BoolOption {
                             id: systemProxy
 
@@ -114,11 +145,10 @@ Dialog {
 
                             Layout.fillWidth: true
                             Layout.preferredHeight: 30
-                            Layout.columnSpan: 2
 
                             value: false
                             label: qsTranslate("RDM","Use system proxy only for HTTP(S) requests")
-                        }                        
+                        }
                     }
 
                     SettingsGroupTitle {
@@ -128,8 +158,11 @@ Dialog {
 
                     GridLayout {
                         columns: 2
+                        rows: 2
+                        flow: GridLayout.TopToBottom
                         rowSpacing: 10
                         columnSpacing: 15
+
 
                         ComboboxOption {
                             id: valueEditorFont
@@ -164,7 +197,7 @@ Dialog {
                             Layout.preferredHeight: 30
 
                             min: 1
-                            max: 2000000
+                            max: 20000000
                             value: 150000
                             label: qsTranslate("RDM","Maximum Formatted Value Size")
                             description: qsTranslate("RDM", "Size in bytes")
@@ -179,7 +212,9 @@ Dialog {
 
                     GridLayout {
                         columns: 2
-                        rowSpacing: 30
+                        rows: 3
+                        flow: GridLayout.TopToBottom
+                        rowSpacing: 10
                         columnSpacing: 20
 
                         BoolOption {
@@ -188,7 +223,7 @@ Dialog {
                             Layout.fillWidth: true
                             Layout.preferredHeight: 30
 
-                            value: Qt.platform.os == "windiws"? true : false
+                            value: Qt.platform.os == "windows"? true : false
                             label: qsTranslate("RDM","Show namespaced keys on top")
                         }
 
@@ -337,6 +372,8 @@ Dialog {
         property alias valueEditorFontSize: valueEditorFontSize.value
         property alias valueSizeLimit: valueSizeLimit.value
         property alias locale: appLang.value
+        property alias darkModeOn: darkModeLinux.value
+        property alias darkMode: darkModeWindows.value
         property alias useSystemProxy: systemProxy.value
         property alias disableProxyForRedisConnections: disableProxyForRedisConnections.value
     }
