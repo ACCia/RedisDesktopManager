@@ -245,7 +245,7 @@ jobs:
         cd rdm
         mkdir -p bin/osx/release && cd bin/osx/release
         mkdir -p ./3rdparty/python-3
-        cp -Rf /usr/local/Cellar/python@3.9/3.9.6/Frameworks/Python.framework/Versions/3.9 $GITHUB_WORKSPACE/rdm/3rdparty/python-3
+        cp -Rf /usr/local/opt/python@3.9/lib/Python.framework/Versions/3.9/ $GITHUB_WORKSPACE/rdm/3rdparty/python-3
         cp -Rf $GITHUB_WORKSPACE/rdm/src/py .
         cd py
         echo six >> requirements.txt
