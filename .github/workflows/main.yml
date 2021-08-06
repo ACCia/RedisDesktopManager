@@ -225,7 +225,6 @@ jobs:
     
     - name: setup python
       run: |
-        brew uninstall --ignore-dependencies python3
         brew install python@3.9
         brew link --overwrite python3
         mkdir -p /usr/local/opt/python@3.9/lib/Python.framework/Versions/3.9/
@@ -287,7 +286,7 @@ jobs:
         zip -q -r release.zip .
         cp -Rf py ./RDM.app/Contents/Resources/
 
-        install_name_tool -change /usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/Python ./RDM.app/Contents/Frameworks/libpython3.9.dylib ./RDM.app/Contents/MacOS/RDM
+        install_name_tool -change /usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/Python @rpath/libpython3.9.dylib ./RDM.app/Contents/MacOS/RDM
 
         otool -L ./RDM.app/Contents/MacOS/RDM
         macdeployqt ./RDM.app -qmldir=../../../src/qml -always-overwrite -dmg
