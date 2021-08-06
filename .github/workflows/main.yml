@@ -9,12 +9,12 @@ name: CI for redis desktop manager
 # events but only for the master branch
 on:
   push:
-    branches: [ pre-release ]
+    branches: [ 2021 ]
     paths-ignore: 
       - 'README.md'
       - 'LICENSE'
   pull_request:
-    branches: [ pre-release ]
+    branches: [ 2021 ]
     paths-ignore: 
       - 'README.md'
       - 'LICENSE'
