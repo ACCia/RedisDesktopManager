@@ -228,7 +228,8 @@ jobs:
         brew install python@3.9
         brew link --overwrite python@3.9
         mkdir -p /usr/local/opt/python@3.9/lib/Python.framework/Versions/3.9/Python
-        ln -s /usr/local/Cellar/python@3.9/3.9.6/Frameworks/Python.framework/Versions/3.9 /usr/local/opt/python@3.9/lib/Python.framework/Versions/3.9/Python
+        cp -Rf /usr/local/Cellar/python@3.9/3.9.6/Frameworks/Python.framework/Versions/3.9 /usr/local/opt/python@3.9/lib/Python.framework/Versions/3.9/Python
+#        ln -s /usr/local/Cellar/python@3.9/3.9.6/Frameworks/Python.framework/Versions/3.9 /usr/local/opt/python@3.9/lib/Python.framework/Versions/3.9/Python
 #         brew install python@3.7
 #         brew link --overwrite python@3.7
     
